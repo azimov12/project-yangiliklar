@@ -17,7 +17,6 @@ class DetailNewsCategory(APIView):
     def get(self, request, *args, **kwargs):
         categories = get_object_or_404(NewsCategory, id=kwargs['category_id'])
         serializer = NewsCategorySerializer(categories)
-        print(7788787)
         return Response(serializer.data)
 
 class CreateNewsCategory(APIView):
